@@ -38,11 +38,11 @@ export default [
       },
 
       parser: tsParser,
-      ecmaVersion: 5,
-      sourceType: 'commonjs',
+      ecmaVersion: 2022,
+      sourceType: 'module',
 
       parserOptions: {
-        project: true,
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname,
       },
     },
