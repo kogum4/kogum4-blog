@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'Personal blog by koguma',
   language: 'ja-JP',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://kogumadotwav.vercel.app',
   siteRepo: 'https://github.com/koguma2102/personal-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
