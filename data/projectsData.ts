@@ -7,20 +7,18 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Dattorro Ambisonics Reverb',
+    description: `Max/MSPで実装したDattorroのプレートリバーブアルゴリズムをアンビソニックスに対応させたリバーブシステム。
+    アンビソニックス信号を入力として受け取り、空間的な残響を付加することができます。`,
+    imgSrc: '/static/images/projects/dattorro.png',
+    href: 'https://github.com/koguma2102/DattorroAmbisonicsReverb',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'VRChat Ambisonics System',
+    description: `VRChatで使用できるアンビソニックスオーディオシステム。
+    没入感のある3D音響体験を提供し、VR空間での音の自然な移動と空間的な広がりを実現します。`,
+    imgSrc: '/static/images/projects/vrchat.png',
+    href: 'https://github.com/koguma2102/VRChatAmbisonics',
   },
 ]
 
