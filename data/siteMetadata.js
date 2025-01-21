@@ -14,6 +14,8 @@ const siteMetadata = {
   github: 'https://github.com/koguma2102',
   x: 'https://x.com/kogumavrc',
   youtube: 'https://www.youtube.com/@koguma2102',
+  spotify: 'https://open.spotify.com/artist/2JZgxYZrxlHfXYGRoRruon?si=skWqYMu0TAioPRpnmwMzFA',
+  vrchat: 'https://vrchat.com/home/user/usr_c6f9aed3-4094-4075-8f73-9f91a06f9702',
   locale: 'ja-JP',
   stickyNav: false,
   analytics: {

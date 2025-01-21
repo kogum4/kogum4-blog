@@ -11,6 +11,8 @@ import {
   Instagram,
   Medium,
   Bluesky,
+  VRChat,
+  Spotify,
 } from './icons'
 
 const components = {
@@ -26,6 +28,8 @@ const components = {
   instagram: Instagram,
   medium: Medium,
   bluesky: Bluesky,
+  vrchat: VRChat,
+  spotify: Spotify,
 }
 
 type SocialIconProps = {
