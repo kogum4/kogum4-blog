@@ -8,8 +8,8 @@ const siteMetadata = {
   theme: 'dark', // system, dark or light
   siteUrl: 'https://kogum4.com/',
   siteRepo: 'https://github.com/koguma2102/personal-blog',
-  // siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   email: 'koguma2102@gmail.com',
   github: 'https://github.com/koguma2102',
   x: 'https://x.com/kogum4vrc',
