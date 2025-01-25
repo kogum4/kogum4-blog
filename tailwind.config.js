@@ -1,9 +1,11 @@
 // @ts-check
-const { fontFamily } = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import colors from 'tailwindcss/colors'
+import forms from '@tailwindcss/forms'
+import typography from '@tailwindcss/typography'
 
 /** @type {import("tailwindcss/types").Config } */
-module.exports = {
+export default {
   content: [
     './node_modules/pliny/**/*.js',
     './app/**/*.{js,ts,jsx,tsx}',
@@ -25,7 +27,7 @@ module.exports = {
         sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.pink,
+        primary: colors.blue,
         gray: colors.gray,
       },
       zIndex: {
@@ -55,37 +57,8 @@ module.exports = {
             },
           },
         },
-        invert: {
-          css: {
-            a: {
-              color: theme('colors.primary.500'),
-              '&:hover': {
-                color: `${theme('colors.primary.400')}`,
-              },
-              code: { color: theme('colors.primary.400') },
-            },
-            'h1,h2,h3,h4,h5,h6': {
-              color: theme('colors.gray.100'),
-            },
-          },
-        },
       }),
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    ({ addBase, theme }) => {
-      addBase({
-        'a, button': {
-          outlineColor: theme('colors.primary.500'),
-          '&:focus-visible': {
-            outline: '2px solid',
-            borderRadius: theme('borderRadius.DEFAULT'),
-            outlineColor: theme('colors.primary.500'),
-          },
-        },
-      })
-    },
-  ],
+  plugins: [forms, typography],
 }
