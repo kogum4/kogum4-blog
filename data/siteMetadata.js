@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'koguma.wav',
-  author: 'koguma',
-  headerTitle: 'koguma.wav',
+  title: 'kogum_$qR+16',
+  author: 'kogum4',
+  headerTitle: 'kogum_$qR+16',
   description: '音の技術のこととか書いてます',
   language: 'ja-JP',
   theme: 'system', // system, dark or light
