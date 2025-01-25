@@ -56,7 +56,7 @@ export async function generateMetadata(props: {
       title: post.title,
       description: post.summary,
       siteName: siteMetadata.title,
-      locale: 'en_US',
+      locale: 'ja_JP',
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,
@@ -65,7 +65,7 @@ export async function generateMetadata(props: {
       authors: authors.length > 0 ? authors : [siteMetadata.author],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title: post.title,
       description: post.summary,
       images: imageList,
