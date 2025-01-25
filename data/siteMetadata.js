@@ -12,7 +12,7 @@ const siteMetadata = {
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   email: 'koguma2102@gmail.com',
   github: 'https://github.com/koguma2102',
-  x: 'https://x.com/kogum_sqrt16',
+  x: 'https://x.com/kogum4vrc',
   youtube: 'https://www.youtube.com/@koguma2102',
   spotify: 'https://open.spotify.com/artist/2JZgxYZrxlHfXYGRoRruon?si=skWqYMu0TAioPRpnmwMzFA',
   vrchat: 'https://vrchat.com/home/user/usr_c6f9aed3-4094-4075-8f73-9f91a06f9702',
