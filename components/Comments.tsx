@@ -12,11 +12,12 @@ export default function Comments({ slug }: { slug: string }) {
   }
   return (
     <>
-      {loadComments ? (
+      {/* {loadComments ? (
         <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
       ) : (
         <button onClick={() => setLoadComments(true)}>Load Comments</button>
-      )}
+      )} */}
+      <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
     </>
   )
 }
