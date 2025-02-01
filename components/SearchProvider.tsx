@@ -16,7 +16,7 @@ export const SearchProvider = ({ children }) => {
           return json.map((post: CoreContent<Blog>) => ({
             id: post.path,
             name: post.title,
-            keywords: post.body.raw,
+            keywords: post?.summary || '',
             section: 'Blog',
             subtitle: post.tags.join(', '),
             perform: () => router.push('/' + post.path),
