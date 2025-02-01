@@ -82,7 +82,7 @@ onSearchDocumentsLoad(json) {
   return json.map((post: Blog) => ({
     id: post.path,
     name: post.title,
-    keywords: post?.summary || '',
+    keywords: post.body.raw,
     section: 'Blog',
     subtitle: post.tags.join(', '),
     perform: () => router.push('/' + post.path),
