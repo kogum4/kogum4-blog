@@ -7,10 +7,10 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import vercel from '@astrojs/vercel';
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeComponents from "rehype-components"; /* Render the custom directive content */
+import rehypeComponents from "rehype-components";/* Render the custom directive content */
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
-import remarkDirective from "remark-directive"; /* Handle directives */
+import remarkDirective from "remark-directive";/* Handle directives */
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
@@ -20,6 +20,8 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
+import yeskunallumami from "@yeskunall/astro-umami";
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -28,43 +30,38 @@ export default defineConfig({
   base: "/",
   trailingSlash: "always",
   integrations: [
+    umami({ id: "348f6cd6-9448-440b-83f9-4836d99ef940" }),
     tailwind(
-        {
-          nesting: true,
-        }
-    ),
-    swup({
-      theme: false,
-      animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
-      // the default value `transition-` cause transition delay
-      // when the Tailwind class `transition-all` is used
-      containers: ["main", "#toc"],
-      smoothScrolling: true,
-      cache: true,
-      preload: true,
-      accessibility: true,
-      updateHead: true,
-      updateBodyClass: false,
-      globalInstance: true,
-    }),
-    icon({
-      include: {
-        "preprocess: vitePreprocess(),": ["*"],
-        "fa6-brands": ["*"],
-        "fa6-regular": ["*"],
-        "fa6-solid": ["*"],
-      },
-    }),
-    svelte(),
-    sitemap(),
-    Compress({
-      CSS: false,
-      Image: false,
-      Action: {
-        Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
-      },
-    }),
-  ],
+      {
+        nesting: true,
+      }
+  ), swup({
+    theme: false,
+    animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
+    // the default value `transition-` cause transition delay
+    // when the Tailwind class `transition-all` is used
+    containers: ["main", "#toc"],
+    smoothScrolling: true,
+    cache: true,
+    preload: true,
+    accessibility: true,
+    updateHead: true,
+    updateBodyClass: false,
+    globalInstance: true,
+  }), icon({
+    include: {
+      "preprocess: vitePreprocess(),": ["*"],
+      "fa6-brands": ["*"],
+      "fa6-regular": ["*"],
+      "fa6-solid": ["*"],
+    },
+  }), svelte(), sitemap(), Compress({
+    CSS: false,
+    Image: false,
+    Action: {
+      Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
+    },
+  }), yeskunallumami()],
   markdown: {
     remarkPlugins: [
       remarkMath,
