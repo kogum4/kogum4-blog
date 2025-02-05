@@ -22,9 +22,9 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
-  site: "https://fuwari.vercel.app/",
+  site: "https://kogum4.com/",
   base: "/",
   trailingSlash: "always",
   integrations: [
