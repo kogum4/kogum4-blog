@@ -21,7 +21,6 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 import umami from "@yeskunall/astro-umami";
-import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +31,6 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     umami({ id: "348f6cd6-9448-440b-83f9-4836d99ef940" }),
-    mdx(),
     tailwind(
       {
         nesting: true,
