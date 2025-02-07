@@ -1,0 +1,151 @@
+---
+title: Astro(Fuwari)＋Vercelで手軽に素敵な個人ブログを作る
+published: 2025-02-07
+description: "Fuwariカスタマイズ 1/n"
+image: "/posts/astro-fuwari-vercel-blog-1/cover.png"
+tags: ["Astro", "Fuwari", "Vercel", "Blog"]
+category: Web
+draft: false
+---
+
+本ブログサイトは静的サイトジェネレーターの **Astro** とそのテンプレート **Fuwari** をベースに、無料ホスティングサービス **Vercel** にて公開されています。備忘録も兼ねて同構成でブログを公開するまでの手順をまとめておきます。Gitの基本操作さえわかっていれば簡単にできますのでぜひお試しください。
+
+## 1. Fuwari テンプレートでリポジトリを作成
+
+1. 以下のリポジトリへアクセスし、「Use this template」→「Create a new repository」をクリック。
+   ::github{repo="saicaca/fuwari"}
+
+2. 作成したリポジトリをローカルにクローン。
+   ```bash
+   git clone https://github.com/<ユーザー名>/<リポジトリ名>.git
+   cd <リポジトリ名>
+   ```
+
+## 2. ローカル開発環境を準備 & カスタマイズ
+
+1. **依存パッケージのインストール**  
+   ```bash
+   pnpm install
+   pnpm add sharp  # 画像処理ライブラリが必要
+   pnpm dev
+   ```
+   ブラウザで [http://localhost:4321](http://localhost:4321) を開いて動作確認。 **pnpm**がインストールされていない場合は`npm install -g pnpm`コマンドでpnpmを導入後に上記コマンドを実行。
+
+2. **基本設定の変更**  
+   - `src/config.ts` でサイト名・テーマカラー・プロフィール（名前、アバター画像、SNSリンクなど）を編集。主要な設定項目は以下の通り。
+  
+```typescript
+// サイト全体の設定
+export const siteConfig: SiteConfig = {
+  title: 'kogum_$qR+16',                 // ブログのメインタイトル
+  subtitle: 'Audio Tech Blog',           // サブタイトル（任意）。空文字列でもOK
+  lang: 'ja',                            // サイト全体の言語。'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'など
+
+  themeColor: {
+    hue: 265,                            // テーマカラーの色相を0～360で指定（例: 0=赤, 200=ティール, 250=シアン, 345=ピンク）
+    fixed: true,                         // trueにすると、訪問者側のテーマカラー変更UIを隠す
+  },
+
+  banner: {
+    enable: false,                       // トップページ上部にバナー画像を表示する場合はtrueに
+    src: 'assets/images/demo-banner.png',// バナー画像へのパス（'/src'からの相対パス。先頭に'/'が付く場合は'/public'基準）
+    position: 'center',                  // 画像の表示位置。'top', 'center', 'bottom'のいずれか。デフォルトは'center'
+    credit: {
+      enable: false,                     // バナー画像のクレジット表記を表示するかどうか
+      text: '',                          // クレジットのテキスト（作者名や出典など）
+      url: ''                            // クレジットテキストに紐づけるリンク先URL
+    }
+  },
+
+  toc: {
+    enable: true,                        // 投稿ページ右側に目次を表示するかどうか
+    depth: 2                             // 目次に含める見出しレベルの最大深度（1～3）
+  },
+
+  favicon: [
+    // サイトのファビコンを設定する場合は、オブジェクトを追加
+    // 下記を参考に複数サイズ・複数テーマのファビコンを指定可能
+    // {
+    //   src: '/favicon/icon.png',       // '/public'からの相対パス
+    //   theme: 'light',                 // (任意) 'light'または'dark'。モード別にアイコンを変えたい場合に設定
+    //   sizes: '32x32',                 // (任意) ファビコン画像のサイズ指定
+    // }
+  ]
+}
+```
+
+```typescript
+// プロフィール情報の設定
+export const profileConfig: ProfileConfig = {
+  // アバター画像へのパス（'/src'基準。先頭に'/'がつく場合は'/public'基準）
+  avatar: 'assets/images/demo-avatar.png',
+
+  // ブログのサイドバー等に表示する名前
+  name: 'kogum4',
+
+  // 簡単な自己紹介文。プロフィール画像の下に表示される
+  bio: 'Audio Programmer / Vocaloid Producer',
+
+  // SNSリンクや外部サイトへのリンクリスト
+  links: [
+    {
+      name: 'X',                        // 表示名
+      icon: 'fa6-brands:x-twitter',     // アイコンセット/アイコン名 (https://icones.js.org/参照)
+      url: 'https://x.com/kogum4vrc',   // リンク先URL
+    },
+    {
+      name: 'GitHub',
+      icon: 'fa6-brands:github',
+      url: 'https://github.com/kogum4',
+    },
+    {
+      name: 'YouTube',
+      icon: 'fa6-brands:youtube',
+      url: 'https://www.youtube.com/@koguma2102',
+    },
+    {
+      name: 'Spotify',
+      icon: 'fa6-brands:spotify',
+      url: 'https://open.spotify.com/artist/2JZgxYZrxlHfXYGRoRruon?si=skWqYMu0TAioPRpnmwMzFA',
+    },
+    {
+      name: 'Mail',
+      icon: 'fa6-regular:envelope',
+      url: 'mailto:koguma2102@gmail.com',
+    },
+  ],
+}
+
+```
+
+   - 画像を `src/assets/images/` に追加し、パスを更新。
+
+3. **記事を追加**  
+   ```bash
+   pnpm new-post hello-world
+   ```
+   自動生成された `src/content/posts/hello-world.md` を編集して本文を記入。
+
+## 3. GitHub にプッシュ
+
+```bash
+git add .
+git commit -m "カスタマイズ&記事追加"
+git push origin main
+```
+
+## 4. Vercel でデプロイ
+
+1. [Vercel](https://vercel.com/) にサインアップ（GitHub連携推奨）。  
+2. 「New Project」→ 対象リポジトリを選択 → 自動で Astro 設定を読み込み → 「Deploy」。  
+3. デプロイが完了すると、 `xxxx.vercel.app` のドメインが割り当てられる。アクセスして動作確認。
+
+## 5. カスタムドメイン設定（任意）
+
+1. Vercel プロジェクトの「Settings」→「Domains」→ 独自ドメインを追加。  
+2. 表示される指示に従い、DNS レコード (A or CNAME) を設定。  
+3. 数分～数時間後に「Verified」になれば完了。
+---
+これで最低限のブログが完成します。あとは記事を追加し、`git push` すれば自動デプロイされます。なお、本サイトのレポジトリは以下で公開してますのでぜひ参考にしてください。
+
+::github{repo="kogum4/kogum4-blog"}
