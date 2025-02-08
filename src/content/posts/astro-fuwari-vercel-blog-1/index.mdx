@@ -140,12 +140,12 @@ draft: false
    - プロフィール画像と必要に応じてバナー画像を `src/assets/images/` に追加し、`config.ts`のパスを更新。
 
 3. **記事を追加・整理**  
-   ```bash
-   pnpm new-post hello-world
-   ```
-  - 自動生成された `src/content/posts/hello-world.md` を編集して本文を記入。
-
-  - 併せて`src/content/posts`内にデフォルトで存在する記事を削除、あるいは `draft: true`に設定してデプロイ時にデフォルト記事が表示されないようにしておく。
+  - 以下コマンドで自動生成された `src/content/posts/hello-world.md` を編集して本文を記入。
+    ```bash
+    pnpm new-post hello-world
+    ```
+  - `src/content/posts`内にデフォルトで存在する記事を削除。あるいは `draft: true`に設定してデプロイ時にデフォルト記事が表示されないようにしておく。
+  - `src/content/spec/about.md`を編集して自己紹介を作成。
 
 ## 3. GitHub にプッシュ
 
