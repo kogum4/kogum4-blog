@@ -31,7 +31,7 @@ draft: false
    ブラウザで [http://localhost:4321](http://localhost:4321) を開いて動作確認。 **pnpm**がインストールされていない場合は`npm install -g pnpm`コマンドでpnpmを導入後に上記コマンドを実行。
 
 2. **基本設定の変更**  
-  `src/config.ts` でサイト名・テーマカラー・プロフィール（名前、アバター画像、SNSリンクなど）を編集。主要な設定項目は以下の通り。 
+  `src/config.ts` でサイト名・テーマカラー・プロフィール（名前、アバター画像、SNSリンクなど）を編集。設定項目は以下の通り。 
   ```typescript
   import type {
     LicenseConfig,
@@ -136,9 +136,9 @@ draft: false
   }
   ```
 
-   - 画像を `src/assets/images/` にプロフィール画像と必要に応じてバナー画像を追加し、`config.ts`のパスを更新。
+   - プロフィール画像と必要に応じてバナー画像を `src/assets/images/` に追加し、`config.ts`のパスを更新。
 
-3. **記事を追加**  
+1. **記事を追加**  
    ```bash
    pnpm new-post hello-world
    ```
