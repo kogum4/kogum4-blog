@@ -173,5 +173,5 @@ git push origin main
 
 ## 関連記事
 - Astro(Fuwari)＋Vercelで手軽に素敵な個人ブログを作る(本記事)
-- [Astro+Fuwariブログにgiscusのコメント機能を追加する方法](https://kogum4.com/posts/astro-fuwari-comment-giscus/)
-- Astro+FuwariブログにX(Twitter)カード画像のメタデータを挿入する方法(公開予定)
+- [Astro+Fuwariブログにgiscusのコメント機能を追加する](https://kogum4.com/posts/astro-fuwari-comment-giscus/)
+- Astro+Fuwariブログで記事ごとにOGP画像を設定する(公開予定)

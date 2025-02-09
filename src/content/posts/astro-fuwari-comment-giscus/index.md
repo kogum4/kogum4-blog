@@ -1,5 +1,5 @@
 ---
-title: Astro+Fuwariブログにgiscusのコメント機能を追加する方法
+title: Astro+Fuwariブログにgiscusのコメント機能を追加する
 published: 2025-02-09
 description: "Fuwariカスタマイズ 2/n"
 image: "cover.png"
@@ -137,5 +137,5 @@ import Giscus from "../../components/comment/Giscus.astro"
 
 ## 関連記事
 - [Astro(Fuwari)＋Vercelで手軽に素敵な個人ブログを作る](https://kogum4.com/posts/astro-fuwari-vercel-blog/)
-- Astro+Fuwariブログにgiscusのコメント機能を追加する方法(本記事)
-- Astro+FuwariブログにX(Twitter)カード画像のメタデータを挿入する方法(公開予定)
+- Astro+Fuwariブログにgiscusのコメント機能を追加する(本記事)
+- Astro+Fuwariブログで記事ごとにOGP画像を設定する(公開予定)
