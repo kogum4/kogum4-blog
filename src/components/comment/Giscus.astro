@@ -1,0 +1,29 @@
+---
+const giscus = {
+  repo: "kogum4/kogum4-blog",
+  repoId: "R_kgDONtgFZw",
+  category: "Announcements",
+  categoryId: "DIC_kwDONtgFZ84Cmgvx",
+  mapping: "title",
+  reactionsEnabled: true,
+  inputPosition: "top",
+  lang: "ja",
+  theme: "dark",
+};
+---
+
+<div id="giscus_container">
+  <script src="https://giscus.app/client.js"
+    data-repo={giscus.repo}
+    data-repo-id={giscus.repoId}
+    data-category={giscus.category}
+    data-category-id={giscus.categoryId}
+    data-mapping={giscus.mapping}
+    data-reactions-enabled={giscus.reactionsEnabled ? "1" : "0"}
+    data-input-position={giscus.inputPosition}
+    data-theme={giscus.theme}
+    data-lang={giscus.lang}
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
