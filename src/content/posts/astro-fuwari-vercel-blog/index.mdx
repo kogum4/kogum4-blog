@@ -12,9 +12,9 @@ draft: false
 
 ## 1. Fuwari テンプレートでリポジトリを作成
 
-1. [saicaca/fuwari](https://github.com/saicaca/fuwari) へアクセスし、「Use this template」→「Create a new repository」をクリック。
+1. [saicaca/fuwari](https://github.com/saicaca/fuwari) へアクセスし、「Use this template」→「Create a new repository」をクリック
 
-2. 作成したリポジトリをローカルにクローン。
+2. 作成したリポジトリをローカルにクローン
    ```bash
    git clone https://github.com/<ユーザー名>/<リポジトリ名>.git
    cd <リポジトリ名>
@@ -28,7 +28,7 @@ draft: false
    pnpm add sharp  # 画像処理ライブラリが必要
    pnpm dev
    ```
-   ブラウザで [http://localhost:4321](http://localhost:4321) を開いて動作確認。 **pnpm**がインストールされていない場合は`npm install -g pnpm`コマンドでpnpmを導入後に上記コマンドを実行。
+   ブラウザで [http://localhost:4321](http://localhost:4321) を開いて動作確認。 **pnpm**がインストールされていない場合は`npm install -g pnpm`コマンドでpnpmを導入後に上記コマンドを実行
 
 2. **基本設定の変更**  
   - `src/config.ts` でサイト名・テーマカラー・プロフィール（名前、アバター画像、SNSリンクなど）を編集。設定項目は以下の通り。 
@@ -137,15 +137,15 @@ draft: false
     }
     ```
 
-   - プロフィール画像と必要に応じてバナー画像を `src/assets/images/` に追加し、`config.ts`のパスを更新。
+   - プロフィール画像と必要に応じてバナー画像を `src/assets/images/` に追加し、`config.ts`のパスを更新
 
 3. **記事を追加・整理**  
-  - 以下コマンドで自動生成された `src/content/posts/hello-world.md` を編集して本文を記入。
+  - 以下コマンドで自動生成された `src/content/posts/hello-world.md` を編集して本文を記入
     ```bash
     pnpm new-post hello-world
     ```
   - `src/content/posts`内にデフォルトで存在する記事を削除。あるいは `draft: true`に設定してデプロイ時にデフォルト記事が表示されないようにしておく。
-  - `src/content/spec/about.md`を編集して自己紹介を作成。
+  - `src/content/spec/about.md`を編集して自己紹介を作成
 
 ## 3. GitHub にプッシュ
 
@@ -157,15 +157,15 @@ git push origin main
 
 ## 4. Vercel でデプロイ
 
-1. [Vercel](https://vercel.com/) にサインアップ（GitHub連携推奨）。  
-2. 「Add New...」 → 「Project」→ 対象リポジトリをImport → 自動で Astro 設定を読み込み → 「Deploy」。  
-3. デプロイが完了すると、 `xxxx.vercel.app` のドメインが割り当てられる。アクセスして動作確認。
+1. [Vercel](https://vercel.com/) にサインアップ（GitHub連携推奨）
+2. 「Add New...」 → 「Project」→ 対象リポジトリをImport → 自動で Astro 設定を読み込み → 「Deploy」
+3. デプロイが完了すると、 `xxxx.vercel.app` のドメインが割り当てられる。アクセスして動作確認
 
 ## 5. カスタムドメイン設定（任意）
 
-1. Vercel プロジェクトの「Settings」→「Domains」→「Add」→ 独自ドメインを追加。  
-2. 表示される指示に従い、DNS レコード (A or CNAME) を設定。  
-3. 数分～数時間後に「Verified」になれば完了。
+1. Vercel プロジェクトの「Settings」→「Domains」→「Add」→ 独自ドメインを追加
+2. 表示される指示に従い、DNS レコード (A or CNAME) を設定
+3. 数分～数時間後に「Verified」になれば完了
 ---
 これで最低限のブログが完成します。あとは記事を追加し、`git push` すれば自動デプロイされます。なお、本サイトのリポジトリは以下で公開してますのでぜひ参考にしてください。
 
