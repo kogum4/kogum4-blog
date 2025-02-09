@@ -10,7 +10,7 @@ draft: false
 
 本ブログサイトは静的サイトジェネレーターの **Astro** とそのテンプレート **Fuwari** をベースに、無料ホスティングサービス **Vercel** にて公開されています。備忘録も兼ねて同構成でブログを公開するまでの手順をまとめておきます。Gitの基本操作さえわかっていれば簡単にできますのでぜひお試しください。
 
-## 1. Fuwari テンプレートでリポジトリを作成
+## Fuwari テンプレートでリポジトリを作成
 
 1. [saicaca/fuwari](https://github.com/saicaca/fuwari) へアクセスし、「Use this template」→「Create a new repository」をクリック
 
@@ -20,7 +20,7 @@ draft: false
    cd <リポジトリ名>
    ```
 
-## 2. ローカル開発環境を準備 & カスタマイズ
+## ローカル開発環境を準備 & カスタマイズ
 
 1. **依存パッケージのインストール**  
    ```bash
@@ -147,7 +147,7 @@ draft: false
   - `src/content/posts`内にデフォルトで存在する記事を削除。あるいは `draft: true`に設定してデプロイ時にデフォルト記事が表示されないようにしておく。
   - `src/content/spec/about.md`を編集して自己紹介を作成
 
-## 3. GitHub にプッシュ
+## GitHub にプッシュ
 
 ```bash
 git add .
@@ -155,13 +155,13 @@ git commit -m "カスタマイズ&記事追加"
 git push origin main
 ```
 
-## 4. Vercel でデプロイ
+## Vercel でデプロイ
 
 1. [Vercel](https://vercel.com/) にサインアップ（GitHub連携推奨）
 2. 「Add New...」 → 「Project」→ 対象リポジトリをImport → 自動で Astro 設定を読み込み → 「Deploy」
 3. デプロイが完了すると、 `xxxx.vercel.app` のドメインが割り当てられる。アクセスして動作確認
 
-## 5. カスタムドメイン設定（任意）
+## カスタムドメイン設定（任意）
 
 1. Vercel プロジェクトの「Settings」→「Domains」→「Add」→ 独自ドメインを追加
 2. 表示される指示に従い、DNS レコード (A or CNAME) を設定

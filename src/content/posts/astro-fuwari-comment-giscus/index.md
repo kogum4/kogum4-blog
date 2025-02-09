@@ -10,7 +10,7 @@ draft: false
 
 [前回の記事](https://kogum4.com/posts/astro-fuwari-vercel-blog/)では、 **Astro** とそのテンプレート **Fuwari** を使ったブログサイトを **Vercel**で公開するまでの手順をご紹介しました。今回はAstroのAstro+Fuwariテンプレートで作成したブログに、**giscus**（GitHub Discussionsを利用するコメントシステム）を追加する方法を紹介します。以下の手順で、簡単にコメント欄を実装できます。
 
-## 1. giscus用の設定値を取得する
+## giscus用の設定値を取得する
 
 1. 自分のブログのGithubリポジトリの「Settings」→「General」→「Features」でDiscussions機能を有効にする。
   :::important
@@ -42,7 +42,7 @@ draft: false
       crossorigin="anonymous"
    ```
 
-## 2. giscusコメント用コンポーネントを作成
+## giscusコメント用コンポーネントを作成
 
 Fuwariテンプレートにはコメント機能が初めから含まれていないため、新たにコンポーネントを作成します。ここでは、Astro形式のコンポーネントとして実装します。
 
@@ -82,7 +82,7 @@ const giscus = {
 
 ※後から設定値を外部ファイル（例：`src/config.ts`）で管理する場合は、上記の`giscus`オブジェクトをそちらから読み込むように変更してください。
 
-## 3. レイアウトにコメントコンポーネントを組み込む
+## レイアウトにコメントコンポーネントを組み込む
 
 次に、各ブログ記事ページの下部にコメント欄を表示するため、投稿用レイアウト（`src/pages/posts/[...slug].astro`）に作成したコンポーネントを組み込みます。
 
@@ -111,7 +111,7 @@ import Giscus from "../../components/comment/Giscus.astro"
 
 これで、各記事ページの下部にgiscusのコメントウィジェットが埋め込まれます。
 
-## 4. 動作確認＆デプロイ
+## 動作確認＆デプロイ
 
 1. **ローカルで確認:**  
    プロジェクトルートで開発サーバーを起動します。
