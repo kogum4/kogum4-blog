@@ -1,7 +1,7 @@
 ---
 title: Astro+Fuwariブログにgiscusのコメント機能を追加する
 published: 2025-02-09
-description: "Fuwariカスタマイズ 2/n"
+description: "Astro+Fuwariで作る技術ブログ 第2回"
 image: "cover.png"
 tags: ["Astro", "Fuwari", "Blog", "giscus"]
 category: Web

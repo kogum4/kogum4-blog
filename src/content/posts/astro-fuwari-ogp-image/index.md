@@ -1,7 +1,7 @@
 ---
 title: Astro+Fuwariブログで記事ごとにOGP画像を設定する
 published: 2025-02-10
-description: "Fuwariカスタマイズ 3/n"
+description: "Astro+Fuwariで作る技術ブログ 第3回"
 image: "cover.png"
 tags: ["Astro", "Fuwari", "OGP", "Blog"]
 category: Web

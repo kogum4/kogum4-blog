@@ -1,7 +1,7 @@
 ---
 title: Astro(Fuwari)＋Vercelで手軽に素敵な個人ブログを作る
 published: 2025-02-07
-description: "Fuwariカスタマイズ 1/n"
+description: "Astro+Fuwariで作る技術ブログ 第1回"
 image: "cover.png"
 tags: ["Astro", "Fuwari", "Vercel", "Blog"]
 category: Web
