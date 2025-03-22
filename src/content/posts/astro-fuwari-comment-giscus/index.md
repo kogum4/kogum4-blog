@@ -133,7 +133,7 @@ import Giscus from "../../components/comment/Giscus.astro"
 
 ---
 
-以上、Fuwari公式テンプレートから作成したリポジトリに、giscusコメント機能を追加する方法でした。ぜひお試しください！
+以上、Fuwari公式テンプレートから作成したリポジトリに、giscusコメント機能を追加する方法でした。ぜひお試しください。
 
 ## 関連記事
 - [Astro(Fuwari)＋Vercelで手軽に素敵な個人ブログを作る](https://kogum4.com/posts/astro-fuwari-vercel-blog/)
